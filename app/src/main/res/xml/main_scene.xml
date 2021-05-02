@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000"
+        motion:motionInterpolator="linear">
+
+        <OnSwipe
+            motion:touchAnchorId="@+id/fb_up"
+            motion:dragDirection="dragUp"
+            app:nestedScrollFlags="disableScroll"
+            />
+        <!--        <KeyFrameSet>-->
+        <!--            <KeyPosition-->
+        <!--                app:framePosition="20"-->
+        <!--                motion:keyPositionType="deltaRelative"-->
+        <!--                motion:percentX="0.51"-->
+        <!--                motion:motionTarget="@+id/iv_refresh" />-->
+
+        <!--            <KeyAttribute-->
+        <!--                android:elevation="4dp"-->
+        <!--                android:rotation="45"-->
+        <!--                android:rotationY="15"-->
+        <!--                motion:framePosition="20"-->
+        <!--                motion:motionTarget="@+id/iv_refresh" />-->
+
+        <!--            <KeyAttribute-->
+        <!--                android:elevation="0dp"-->
+        <!--                motion:framePosition="25"-->
+        <!--                motion:motionTarget="@+id/iv_refresh" />-->
+        <!--        </KeyFrameSet>-->
+
+<!--        <OnClick app:targetId="@+id/tv_hello" />-->
+    </Transition>
+
+    <ConstraintSet android:id="@id/start">
+        <Constraint
+            android:id="@+id/fb_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="visible"
+            />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@id/end">
+        <Constraint
+            android:id="@+id/fb_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="invisible"
+            />
+    </ConstraintSet>
+
+
+
+</MotionScene>
